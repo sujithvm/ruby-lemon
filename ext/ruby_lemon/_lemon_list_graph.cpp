@@ -72,10 +72,7 @@ void register_list_graph(Rice::Module rb_mlemon) {
         ;
 
 
-
-
     // lemon::ListDigraph
-
    
     // Node
     define_class_under< ListDigraphBase::Node >(rb_mlemon, "Node")
@@ -91,11 +88,8 @@ void register_list_graph(Rice::Module rb_mlemon) {
         .define_method("node_id", ListDigraph_nodeId)      
         ;        
     
-
     typedef void (ListDigraph::*erase_ldg_node)(ListDigraphBase::Node);
-    typedef void (ListDigraph::*erase_ldg_arc)(ListDigraphBase::Arc);    
-
-    
+    typedef void (ListDigraph::*erase_ldg_arc)(ListDigraphBase::Arc);        
 
     define_class_under< ListDigraph, ListDigraphBase >(rb_mlemon, "ListDigraph")
         .define_constructor(Constructor< ListDigraph >())        
@@ -108,7 +102,6 @@ void register_list_graph(Rice::Module rb_mlemon) {
         .define_method("reverse_arc", &ListDigraph::reverseArc)
         .define_method("clear", &ListDigraph::clear)
         .define_method("node_count", ListDigraph_countNodes)
-        .define_method("arc_count", ListDigraph_countArcs)
-        
+        .define_method("arc_count", ListDigraph_countArcs)        
         ;    
 }
